@@ -31,4 +31,9 @@ public class HomeController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneData.characterselection);
     }
+
+    public void gotoLevelSelection()
+    {
+        SceneManager.LoadScene(SceneData.levelselection);
+    }
 }
