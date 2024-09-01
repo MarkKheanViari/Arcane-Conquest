@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class PanelSwitcher : MonoBehaviour
 {
     public GameObject[] panels;  // Array to hold references to your panels
-    public Button nextButton;    // Reference to the "Next" button
-    public Button previewButton; // Reference to the "Preview" button
 
     private int currentIndex = -1; // Index to keep track of the current panel, start with -1
 
@@ -17,15 +15,11 @@ public class PanelSwitcher : MonoBehaviour
             panel.SetActive(false);
         }
 
-        // Add the Click event listeners to the buttons
-        nextButton.onClick.AddListener(OnNextButtonClick);
-        previewButton.onClick.AddListener(OnPreviewButtonClick);
-
         // Show the first panel initially
         ShowPanel(0);
     }
 
-    void OnNextButtonClick()
+    public void OnNextButtonClick()
     {
         // Hide the current panel
         if (currentIndex >= 0 && currentIndex < panels.Length)
@@ -43,15 +37,15 @@ public class PanelSwitcher : MonoBehaviour
         }
         else
         {
-            // Optionally handle what happens when there are no more panels
             Debug.Log("No more panels to show.");
+            currentIndex = panels.Length - 1; // Ensure index doesn't go out of range
         }
 
-        // Update button states
+        // Update button states (optional)
         UpdateButtonStates();
     }
 
-    void OnPreviewButtonClick()
+    public void OnPreviewButtonClick()
     {
         // Hide the current panel
         if (currentIndex >= 0 && currentIndex < panels.Length)
@@ -69,12 +63,11 @@ public class PanelSwitcher : MonoBehaviour
         }
         else
         {
-            // Optionally handle what happens when there are no previous panels
             Debug.Log("No previous panels to show.");
-            currentIndex = 0; // Optionally reset to the first panel
+            currentIndex = 0; // Ensure index doesn't go out of range
         }
 
-        // Update button states
+        // Update button states (optional)
         UpdateButtonStates();
     }
 
@@ -83,13 +76,14 @@ public class PanelSwitcher : MonoBehaviour
         if (index >= 0 && index < panels.Length)
         {
             panels[index].SetActive(true);
+            currentIndex = index;
         }
     }
 
     void UpdateButtonStates()
     {
-        // Update button interactivity based on the current index
-        nextButton.interactable = (currentIndex < panels.Length - 1);
-        previewButton.interactable = (currentIndex > 0);
+        // Optional: Update button interactivity based on the current index
+        // e.g., nextButton.interactable = (currentIndex < panels.Length - 1);
+        // e.g., previewButton.interactable = (currentIndex > 0);
     }
 }
