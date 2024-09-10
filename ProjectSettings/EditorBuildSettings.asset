@@ -12,13 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Home.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Scenes/GameView.unity
-    guid: 20d120f2770834348ab952aba59239ad
-  - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity
     guid: 62d3969fd02b7cc49a18601c799d0130
   - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 23ac9ea829599614ea6b3d9b4dc29dd8
+  - enabled: 1
+    path: Assets/Scenes/GameView.unity
+    guid: 20d120f2770834348ab952aba59239ad
+  - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 66f9d5e3592b202458531309f56a0450
+  - enabled: 1
+    path: Assets/Scenes/FirstLevel.unity
+    guid: 68a0bbbe53fecad4cb230276608ef8b3
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 82b438e1482269c46aff458216b71a61, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: d54b6c10cf8f7bc4482972dd59692540, type: 2}
